@@ -1,5 +1,5 @@
 {% set name = "tableauserverclient" %}
-{% set version = "0.9" %}
+{% set version = "0.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 444eafec1550cc847dbc6bf86cac9669678c0d47e4f33092d6814fee326ba9fd
+  sha256: 88ca8c9df05f6181936d4496d6aa9159a36fe7d533dcfdcf6bcbcbeced35c96b
 
 build:
   noarch: python
