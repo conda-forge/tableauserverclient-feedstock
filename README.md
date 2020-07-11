@@ -5,7 +5,7 @@ Home: https://github.com/tableau/server-client-python
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A Python library for the Tableau Server REST API
 
