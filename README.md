@@ -5,9 +5,13 @@ Home: https://github.com/tableau/server-client-python
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tableauserverclient-feedstock/blob/master/LICENSE.txt)
 
 Summary: A Python library for the Tableau Server REST API
+
+Development: https://github.com/tableau/server-client-python
+
+Documentation: https://tableau.github.io/server-client-python/docs/
 
 Use the Tableau Server Client (TSC) library to increase your productivity
 as you interact with the Tableau Server REST API. With the TSC library you
