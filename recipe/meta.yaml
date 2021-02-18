@@ -1,5 +1,5 @@
 {% set name = "tableauserverclient" %}
-{% set version = "0.14.1" %}
+{% set version = "0.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 63085a8863f839376c63e8c9ad991ddbee08eafaf2b46203b76d17b8636300dc
+  sha256: 09bef236fa62c30fa45a1308dda1730da56055d8e24ca0391abc770f782482fc
 
 build:
   noarch: python
@@ -35,6 +35,7 @@ test:
     - pytest
     - mock
     - requests-mock >=1.0,<2.0
+    - pycodestyle
 
 about:
   home: https://github.com/tableau/server-client-python
