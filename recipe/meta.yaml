@@ -35,6 +35,7 @@ test:
     - pytest
     - mock
     - requests-mock >=1.0,<2.0
+    - pycodestyle
 
 about:
   home: https://github.com/tableau/server-client-python
