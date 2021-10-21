@@ -18,11 +18,11 @@ requirements:
   build:
     - pytest-runner
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
     - pytest-runner
   run:
-    - python >=3.5
+    - python >=3.6
     - requests >=2.11,<3.0
 
 test:
