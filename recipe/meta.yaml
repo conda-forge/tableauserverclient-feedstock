@@ -1,5 +1,5 @@
 {% set name = "tableauserverclient" %}
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 61f83373e807db7461137d3a47f1f74fb1a36edfb7d393e2b9d3020dcd1b21eb
+  sha256: d6dcd3679833e0f2aa73e12eb80bfba123af72fc110d48b43ce9e7510b40d0f6
 
 build:
   noarch: python
@@ -18,11 +18,11 @@ requirements:
   build:
     - pytest-runner
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
     - pytest-runner
   run:
-    - python >=3.5
+    - python >=3.6
     - requests >=2.11,<3.0
 
 test:
