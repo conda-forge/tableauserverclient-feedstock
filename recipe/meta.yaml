@@ -12,17 +12,18 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: PYTHONPATH=. {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - pytest-runner
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
     - pytest-runner
   run:
-    - python >=3.6
+    - python >=3.7
+    - defusedxml >=0.7.1
     - requests >=2.11,<3.0
 
 test:
@@ -35,7 +36,8 @@ test:
     - pytest
     - mock
     - requests-mock >=1.0,<2.0
-    - pycodestyle
+    - black
+    - mypy ==0.920.0
 
 about:
   home: https://github.com/tableau/server-client-python
