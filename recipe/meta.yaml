@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - pytest-runner
+    - versioneer >=0.24
   host:
     - python >=3.7
     - pip
@@ -24,7 +25,9 @@ requirements:
   run:
     - python >=3.7
     - defusedxml >=0.7.1
-    - requests >=2.11,<3.0
+    - packaging ~=21.3
+    - requests >=2.28
+    - urllib3 ~=1.26.8
 
 test:
   imports:
@@ -33,11 +36,16 @@ test:
     - tableauserverclient.server
     - tableauserverclient.server.endpoint
   requires:
-    - pytest
-    - mock
-    - requests-mock >=1.0,<2.0
+    # Despite argparse being in pyproject.toml as optional for testing purposes, it's only used in
+    # the samples, not the tests.
+    # Including it makes Conda unable to resolve the environment properly, because argparse is so
+    # ancient at this point. This will likely need to be commented out/removed going forward.
+    # - argparse
     - black
-    - mypy ==0.920.0
+    - mock
+    - mypy
+    - pytest >=7.0
+    - requests-mock >=1.0,<2.0
 
 about:
   home: https://github.com/tableau/server-client-python
