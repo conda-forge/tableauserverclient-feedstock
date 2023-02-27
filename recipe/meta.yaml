@@ -36,11 +36,6 @@ test:
     - tableauserverclient.server
     - tableauserverclient.server.endpoint
   requires:
-    # Despite argparse being in pyproject.toml as optional for testing purposes, it's only used in
-    # the samples, not the tests.
-    # Including it makes Conda unable to resolve the environment properly, because argparse is so
-    # ancient at this point. This will likely need to be commented out/removed going forward.
-    # - argparse
     - black
     - mock
     - mypy
