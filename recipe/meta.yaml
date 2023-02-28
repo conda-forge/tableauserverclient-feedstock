@@ -1,5 +1,5 @@
 {% set name = "tableauserverclient" %}
-{% set version = "0.23.4" %}
+{% set version = "0.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1824a826191d91fcfe84a6c30346c1a97f58652ab73bd53c2db8e9a61f670df8
+  sha256: ad1872027e824aceecabd1a8798310606e980990a37cd01bc3fff4dd219ff50f
 
 build:
   noarch: python
@@ -36,11 +36,6 @@ test:
     - tableauserverclient.server
     - tableauserverclient.server.endpoint
   requires:
-    # Despite argparse being in pyproject.toml as optional for testing purposes, it's only used in
-    # the samples, not the tests.
-    # Including it makes Conda unable to resolve the environment properly, because argparse is so
-    # ancient at this point. This will likely need to be commented out/removed going forward.
-    # - argparse
     - black
     - mock
     - mypy
