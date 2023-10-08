@@ -1,5 +1,5 @@
 {% set name = "tableauserverclient" %}
-{% set version = "0.26" %}
+{% set version = "0.28" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: be7ec0ee7d19e244edae6f0c1285098aff782b7a80ff82b1f2512584333f2e52
+  sha256: 8d26e50d592eb81059ec698f2946238bcc2d4683d2ee0f2be987bd1299e3bca0
 
 build:
   noarch: python
@@ -17,17 +17,17 @@ build:
 requirements:
   build:
     - pytest-runner
-    - versioneer >=0.24
+    - versioneer >=0.29
   host:
-    - python >=3.7
+    - python >=3.8,<3.12
     - pip
     - pytest-runner
   run:
-    - python >=3.7
+    - python >=3.8
     - defusedxml >=0.7.1
-    - packaging >=22.0
-    - requests >=2.28
-    - urllib3 ~=1.26.8
+    - packaging >=23.1
+    - requests >=2.31
+    - urllib3 ==2.0.6
 
 test:
   imports:
@@ -36,10 +36,11 @@ test:
     - tableauserverclient.server
     - tableauserverclient.server.endpoint
   requires:
-    - black
+    - black ==23.7
     - mock
-    - mypy
+    - mypy ==1.4
     - pytest >=7.0
+    - pytest-cov
     - pytest-subtests
     - requests-mock >=1.0,<2.0
 
