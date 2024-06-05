@@ -12,21 +12,22 @@ source:
 build:
   noarch: python
   number: 0
-  script: PYTHONPATH=. {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
-  build:
-    - pytest-runner
-    - versioneer >=0.29
+  # build:
+  #   - versioneer >=0.29
   host:
-    - python >=3.8,<3.12
+    - python >=3.8
     - pip
     - pytest-runner
+    - versioneer >=0.29
   run:
     - python >=3.8
     - defusedxml >=0.7.1
     - packaging >=23.1
     - requests >=2.31
+    - typing_extensions >=4.0.1
     - urllib3 ==2.0.7
 
 test:
