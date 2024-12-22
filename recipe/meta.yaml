@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d08d072cf0ab0392e818e9eca480de029e71ee3cd1e12f5d5a2b691b0d00cdb0
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - pytest-runner
     - versioneer >=0.29
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - defusedxml >=0.7.1
     - packaging >=23.1
     - requests >=2.32
@@ -42,6 +42,7 @@ test:
     - pytest-subtests
     - python-build
     - requests-mock >=1.0,<2.0
+    - python {{ python_min }}
 
 about:
   home: https://github.com/tableau/server-client-python
