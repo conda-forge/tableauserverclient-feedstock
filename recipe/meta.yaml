@@ -19,13 +19,13 @@ requirements:
     - python {{ python_min }}
     - pip
     - pytest-runner
-    - versioneer >=0.29
+    - versioneer[toml] >=0.29
   run:
     - python >={{ python_min }}
     - defusedxml >=0.7.1
     - packaging >=23.1
     - requests >=2.32
-    - typing_extensions >=4.0.1
+    - typing_extensions >=4.0
     - urllib3 >=2.2.2,<3
 
 test:
