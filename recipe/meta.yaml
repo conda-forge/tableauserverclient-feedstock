@@ -20,14 +20,14 @@ requirements:
     - pip
     - pytest-runner
     - versioneer[toml] >=0.29
-    - setuptools >=0.75
+    - setuptools >=0.77
   run:
     - python >={{ python_min }}
     - defusedxml >=0.7.1
     - packaging >=23.1
     - requests >=2.32
     - typing_extensions >=4.0
-    - urllib3 >=2.2.2,<3
+    - urllib3 >=2.6.0,<3
 
 test:
   imports:
@@ -36,13 +36,15 @@ test:
     - tableauserverclient.server
     - tableauserverclient.server.endpoint
   requires:
-    - black ==24.8
+    - black ==24.10
     - mypy ==1.4
     - pytest >=7.0
     - pytest-cov
     - pytest-subtests
+    - pytest-xdist
     - python-build
     - requests-mock >=1.0,<2.0
+    - types-requests >=2.32.4.20250913
     - python {{ python_min }}
 
 about:
