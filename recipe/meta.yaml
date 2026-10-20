@@ -1,13 +1,13 @@
 {% set name = "tableauserverclient" %}
-{% set version = "0.41" %}
+{% set version = "0.42" %}
 
 package:
   name: {{ name|lower }}
   version: "{{ version }}"
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e491975b9f0e19467fb6423b814511a9f549c22bce78c868079a25fbe81a0e95
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 3474de006b4b7a5df539e800bb512e79b1bc382ba63309222b8388821664a1c3
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ requirements:
     - packaging >=23.1
     - requests >=2.32
     - typing_extensions >=4.0
-    - urllib3 >=2.6.0,<3
+    - urllib3 >=2.6.3,<3
 
 test:
   imports:
@@ -36,8 +36,9 @@ test:
     - tableauserverclient.server
     - tableauserverclient.server.endpoint
   requires:
-    - black ==26.3.1
-    - mypy ==1.4
+    # upstream wants Black 26.10.1, but that's not yet in conda-forge, so we'll use 26.5.1 for now.
+    - black ==26.5.1
+    - mypy ==2.3.1
     - pytest >=7.0
     - pytest-cov
     - pytest-subtests
