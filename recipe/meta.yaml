@@ -27,7 +27,7 @@ requirements:
     - packaging >=23.1
     - requests >=2.32
     - typing_extensions >=4.0
-    - urllib3 >=2.6.0,<3
+    - urllib3 >=2.6.3,<3
 
 test:
   imports:
@@ -36,8 +36,9 @@ test:
     - tableauserverclient.server
     - tableauserverclient.server.endpoint
   requires:
-    - black ==26.3.1
-    - mypy ==1.4
+    # upstream wants Black 26.10.1, but that's not yet in conda-forge, so we'll use 26.5.1 for now.
+    - black ==26.5.1
+    - mypy ==2.3.1
     - pytest >=7.0
     - pytest-cov
     - pytest-subtests
